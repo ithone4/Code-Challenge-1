@@ -1,34 +1,22 @@
-$(document).ready( onReady );
-
-function onReady(){
-    $( '#generateButton' ).on ('click', generateButton )
-    $( '#div' ).on ( 'click', '.yellowButton', yellowButton )
-    $( '#div' ).on ( 'click', '.deleteButton', deleteButton )
-}
-let number = 1;
-
-function generateButton (){
-    $( '#div' ).append(
-       `<div class='red'>
-            <p>${ number }</p>
-            <input class="yellowButton" type="button" value="yellow">
-            <input class="deleteButton" type="button" value="delete">
-       </div>` 
-    )
-    number++
-}
-
-
-function yellowButton(){
-    $( this ).parent().toggleClass( "yellow" );
-    if ($( this ).val() === "yellow" ){
-        $( this ).val("red"); 
-    }
-    else if ($( this ).val() === "red" ){
-        $( this ).val("yellow"); 
-    }
-}
-
-function deleteButton(){
-    $( this ).parent().fadeOut(0);
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="vendors/jquery-3.4.1.min.js"></script>
+    <script src="scripts/client.js"></script>
+    <link rel="stylesheet" href="styles/style.css">
+    <title></title>
+</head>
+<body>
+    <h1></h1>
+    <div id="mainDiv">
+        <div id='generateDiv'>
+            <input id="generateButton" type="button" value ="generate">
+        </div>
+        <div id="div">
+        </div>
+    </div>
+</body>
+</html>
